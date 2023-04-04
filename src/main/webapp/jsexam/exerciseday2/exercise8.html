@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+<script src = "../util.js"></script>
+<script>
+    var arr = [];
+    var isSuccess;
+    function printH1(content){
+        write(content,"h1");
+    }
+    function printH4(content){
+        write(content,"h4");
+    }
+    function apply(args1,args2){
+        if(typeof args1 == "object" && Array.isArray(args1) && typeof args2 == 'function'){
+            for (let i = 0; i < args1.length; i++) {
+                args2(args1);
+            }
+            return true;
+        }else{
+            console.log("아규먼트 오류");
+            return false;
+        }
+    }
+    while(true){
+        let s = window.prompt("데이터(숫자,문자)를 입력하세요");
+        if (s == null){
+            break;
+        }else {
+            arr.push(s);
+        }
+    }
+    let randNum = Math.floor(Math.random() * 10 + 1);
+    console.log(randNum);
+    if (randNum === 1 || randNum === 4 || randNum === 6){
+        console.log("here1");
+        isSuccess = apply(arr,printH1);
+    }else if(randNum === 3 || randNum === 5 || randNum === 7){
+        console.log("here2");
+        isSuccess = apply(arr,printH4);
+    }else if(randNum === 8 || randNum === 9){
+        console.log("here3");
+        isSuccess = apply("ㅋㅋ",printH1);
+    }else {
+        console.log("here4");
+        isSuccess = apply(arr);
+    }
+    isSuccess?window.alert("처리 성공"):window.alert("처리 실패");
+</script>
+</pre>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+<script src = "../util.js"></script>
+<script>
+    var sum = 0;
+    function calc(...p){
+        sum = 0;
+        if (p.length === 0) {
+            return 0;
+        }
+        for (let i = 0; i < p.length; i++) {
+            if (isNaN(p[i])) return "숫자만 전달하세요";
+            sum+=Number(p[i]);
+        }
+        return sum;
+
+        // for(i in p){
+        //     if(isNaN(i)){
+        //         return "숫자만 전달하세요";
+        //     }else{
+        //         sum+=Number(i);
+        //     }
+        // }
+    }
+    write(calc(),"h3");
+    write(calc(10,20,'30'),"h3");
+    write(calc(10,'가나다',20),"h3");
+    write(calc(1,2,3,4,5),"h3");
+
+</script>
+</pre>
+</body>
+</html>
