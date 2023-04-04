@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src = "util.js"></script>
+<script>
+    writeColor("자바스크립트 실습4","h1","blue");
+    var sumsum = 0;
+    var sum = function(arg1){
+        if (arg1 === "" || arg1 == null || isNaN(arg1)){
+        }else{
+            for (let i = 1; i <= arg1; i++) {
+              sumsum += i;
+            }
+            return sumsum;
+        }
+    }
+    var number;
+    var returnvalue = 0;
+    for (let i = 0; i < 5; i++) {
+        number = Math.floor(Math.random() * 6);
+        number===0?returnvalue = sum():returnvalue = sum(number);
+        if (returnvalue === undefined){
+            write("결과값이 없어요!!","h3")
+        }else{
+            write("호출결과값 : " + returnvalue,"h2")
+        }
+    }
+</script>
+</body>
+</html>
