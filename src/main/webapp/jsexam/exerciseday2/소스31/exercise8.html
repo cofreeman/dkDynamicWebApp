@@ -10,8 +10,12 @@
 <script>
     var arr = [];
     var isSuccess;
-    function printH1(content){write(content,"h1");}
-    function printH4(content){write(content,"h4");}
+    function printH1(content){
+        write(content,"h1");
+    }
+    function printH4(content){
+        write(content,"h4");
+    }
     function apply(args1,args2){
         if(typeof args1 == "object" && Array.isArray(args1) && typeof args2 == 'function'){
             for (let i = 0; i < args1.length; i++) {
@@ -33,13 +37,13 @@
     }
     let randNum = Math.floor(Math.random() * 10 + 1);
     console.log(randNum);
-    if (randNum in [1,4,6]){
+    if (randNum === 1 || randNum === 4 || randNum === 6){
         console.log("here1");
         isSuccess = apply(arr,printH1);
-    }else if(randNum in [3,5,7]){
+    }else if(randNum === 3 || randNum === 5 || randNum === 7){
         console.log("here2");
         isSuccess = apply(arr,printH4);
-    }else if(randNum in [8,9]){
+    }else if(randNum === 8 || randNum === 9){
         console.log("here3");
         isSuccess = apply("ㅋㅋ",printH1);
     }else {

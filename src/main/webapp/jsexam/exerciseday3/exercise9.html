@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../util.js"></script>
+<script>
+    printObject = function(p){
+        console.log("실행됨");
+        if (typeof p !== "object"){
+            return;
+        }
+        else{
+            console.log("여기 또한 실행됨");
+            writeColor(p.msg,p.tag,p.color);
+        }
+    }
+    printObject({
+        msg : "첫번째 msg",
+        color : "red",
+        tag : "h5"
+    });
+    printObject({
+        msg : "두번째 msg",
+        color : "blue",
+        tag : "h4"
+    });
+    printObject({
+        msg : "세번째 msg",
+        color : "purple",
+        tag : "h3"
+    });
+    printObject({
+        msg : "네번째 msg",
+        color : "diamond",
+        tag : "h2"
+    });
+    printObject({
+        msg : "다섯번째 msg",
+        color : "deeppink",
+        tag : "h1"
+    });
+</script>
+</body>
+</html>
