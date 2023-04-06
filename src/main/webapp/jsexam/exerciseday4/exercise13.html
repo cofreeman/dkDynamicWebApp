@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        div {
+            border : 1px solid blue;
+            width : 50%;
+            padding :10%;
+            margin : 0px auto;
+        }
+    </style>
+</head>
+<body>
+<script>
+    document.write("<h1>이벤트 처리 실습</h1>")
+    document.write("<hr>")
+    document.write("<div>")
+    document.write("<button>맑음</button> <button>흐림</button> <button>비</button>")
+    document.write("</div>")
+    document.write("<hr>")
+    document.write("<output></output>")
+    let parentTag = document.getElementsByTagName('div')[0];
+    parentTag.addEventListener('click',showImage);
+    let contentArea = document.getElementsByTagName("output")[0];
+    let image;
+    function showImage(e) {
+        let innerText = e.target.innerHTML;
+        if (innerText === "맑음"){
+            image = "<img src='../../images/sun.png'>";
+        }else if(innerText === "흐림"){
+            image = "<img src='../../images/cloud.png'>";
+        }else if(innerText === "비"){
+            image = "<img src='../../images/rain.png'>";
+        }
+        contentArea.innerHTML = image;
+    }
+</script>
+</body>
+</html>

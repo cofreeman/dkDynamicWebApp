@@ -46,7 +46,7 @@ function displayAlert(e) {
 	msg += `e.currentTarget : ${e.currentTarget}\n`;
 	msg += `this : ${this}\n`;
 	window.alert(msg);
-	//e.stopPropagation();
+	e.stopPropagation();
 }
 window.addEventListener("load", clickHandler);
 </script>
