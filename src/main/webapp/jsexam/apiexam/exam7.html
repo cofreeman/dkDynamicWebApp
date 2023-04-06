@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-    #output {
-        width : 50%;
-        background-color : yellow;
-    }
-</style>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        #output {
+            width: 50%;
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
 <h1 id="t1">컨텐트1</h1>
@@ -23,9 +23,10 @@
 <div id="output"></div>
 <script>
     const outDom = document.getElementById("output");
-    for(let i=1; i < 9; i++)
-		outDom.innerHTML +=
-			    "<h4>"+document.getElementById("t"+i)+"</h4>";
+    for (let i = 1; i < 9; i++)
+        outDom.innerHTML +=
+            "<h4>" + document.getElementById("t" + i) + "</h4>";
+
 </script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+            width: 8%;
+            margin: 1%;
+        }
+        *{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<script src="../util.js"></script>
+<script>
+    // 기본 골격 생성
+    document.write("<h1>구구단</h1>");
+    for (let i = 1; i <= 9; i++) {
+        document.write("<button> " + i + "단</button>");
+    }
+    document.write("<hr>");
+    document.write("<output></output>");
+
+    // h1 태그(구구단)에 웹페이지 이동 이벤트 추가
+    let h1Tags = document.getElementsByTagName('h1');
+    h1Tags[0].addEventListener('click',changHref);
+    function changHref() {
+        location.href = "https://ko.wikipedia.org/wiki/구구단";
+    }
+    // 버튼들에 printGuGu 이벤트 추가
+    let buttons = document.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click',printGuGuDan);
+    }
+    // 버튼에서 몇 단인지 확인 후 output 태그의 내용에 구구단 출력하는 이벤트 추가
+    let baseNum;
+    let outputTag = document.getElementsByTagName("output");
+    let contentArea = outputTag[0];
+    function printGuGuDan() {
+        contentArea.innerHTML = "";
+        baseNum = this.textContent.split("단")[0];
+        for (let i = 1; i <= 9; i++) {
+            contentArea.innerHTML += baseNum + " x " + i + " = " + baseNum * i + "<br>";
+        }
+
+    }
+</script>
+</body>
+</html>
