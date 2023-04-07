@@ -8,6 +8,18 @@
 <h1>자바스크립트의 수행 결과 출력</h1>
 <hr>
 <script>
+    let foo = 10;
+
+    function func(){
+        console.log(foo2);
+    }
+
+    function bar(){
+        var foo2 = 20;
+        func();
+    }
+    bar(); // 10
+    func();
 window.alert("(1) 어디에 출력될까?");
 console.log("(2) 어디에 출력될까?");
 document.write("(3) 어디에 출력될까?"); // DOM 기술을 활용하여 출력
