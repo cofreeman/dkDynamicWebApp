@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+        *{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<br>
+<h1>HTML5 API 실습</h1>
+<button id="saveBtn">저장하기</button>
+<button id="clearBtn">삭제하기</button>
+<button id="loadBtn">읽어오기</button>
+<br>
+<br>
+<canvas id="myCanvas" width="300" height="300"></canvas>
+
+<script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    const saveBtn = document.getElementById('saveBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const loadBtn = document.getElementById('loadBtn');
+
+    ctx.beginPath();
+    ctx.arc(150, 150, 100, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.stroke();
+
+    // Left eye
+    ctx.beginPath();
+    ctx.arc(110, 120, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    // Right eye
+    ctx.beginPath();
+    ctx.arc(190, 120, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    // Nose
+    ctx.beginPath();
+    ctx.moveTo(145, 145);
+    ctx.lineTo(155, 145);
+    ctx.lineTo(150, 155);
+    ctx.closePath();
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    // Mouth
+    ctx.beginPath();
+    ctx.moveTo(100, 200);
+    ctx.lineTo(200, 200);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(110, 190);
+    ctx.lineTo(110, 210);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(130, 190);
+    ctx.lineTo(130, 210);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(150, 190);
+    ctx.lineTo(150, 210);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(170, 190);
+    ctx.lineTo(170, 210);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(190, 190);
+    ctx.lineTo(190, 210);
+    ctx.stroke();
+
+    saveBtn.addEventListener('click', function(){
+        const dataURL = canvas.toDataURL();
+        localStorage.setItem('canvasImage', dataURL);
+    });
+
+    clearBtn.addEventListener('click', function(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+
+    loadBtn.addEventListener('click', function(){
+        const savedImage = localStorage.getItem('canvasImage');
+        if (savedImage) {
+            const img = new Image();
+            img.src = savedImage;
+            img.onload = function(){
+                ctx.drawImage(img, 0, 0);
+            };
+        } else {
+            alert('저장된 이미지가 없습니다.');
+        }
+    });
+</script>
+</body>
+</html>
