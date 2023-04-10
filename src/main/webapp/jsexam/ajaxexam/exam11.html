@@ -18,7 +18,7 @@ function addressToLatLng() {
 	const geocoder = new kakao.maps.services.Geocoder();
 	let addr = document.getElementById("addrbox").value;
 	if(!addr)
-		addr = "서울시 송파구 중대로 135";
+		addr = "안양시 동안구 관악대로 135";
 	geocoder.addressSearch(addr, function(result, status) {
     	if (status === kakao.maps.services.Status.OK) {
     		console.log(result[0].y+":"+result[0].x);

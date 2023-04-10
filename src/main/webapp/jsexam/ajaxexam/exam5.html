@@ -15,11 +15,11 @@
 	     form = document.querySelector("#loginf");
 	     id = document.querySelector("#id");
 	     const passwd = document.querySelector("#passwd");
-	     const queryString = `id=${id.value}&passwd=${passwd.value}`;
+	     const queryParam = `id=${id.value}&passwd=${passwd.value}`;
 	     xhr.addEventListener("load", handleResponse);
 	     xhr.open("POST", form.action, true);
 	     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	     xhr.send(queryString);
+	     xhr.send(queryParam);
 	  }
 	  function handleResponse() {
 		 const jsonObj = JSON.parse(xhr.responseText);
