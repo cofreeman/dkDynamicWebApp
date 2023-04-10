@@ -21,7 +21,7 @@
 			const xhr = new XMLHttpRequest();
 			xhr.onload = function () {                // onreadystatechange = 함수
 				const result = document.getElementById("result");
-				result.innerHTML += req.responseText + "<hr>";				
+				result.innerHTML += xhr.responseText + "<hr>";
 			}
 			xhr.open("GET", "/edu/first.html", true);  // GET, POST, HEAD, PUT, DELETE
 			xhr.send();

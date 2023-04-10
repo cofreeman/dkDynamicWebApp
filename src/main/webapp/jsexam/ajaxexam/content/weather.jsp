@@ -1,6 +1,6 @@
 <%@ page contentType="application/json; charset=utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x"%>
 <c:catch var="err">
 	<c:import var="weather"
 		url="http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4413325600">

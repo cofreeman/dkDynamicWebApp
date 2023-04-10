@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id = 'div_id'></div>
+<script>
+    const xhr = new XMLHttpRequest();
+    let output = '';
+    xhr.onload = function(e) {
+        if (xhr.status === 200) {
+            const str = xhr.responseText;
+            const obj = JSON.parse(str);
+            const target = document.getElementById('div_id');
+            output += `<h1>오늘의 날씨 정보-${obj.wtext}</h1>`;
+            output += `<hr>`;
+            output += `<h3>발표일시 : ${obj.time}</h3><br>`;
+            output += `<h3>온도 : ${obj.temp}도</h3>`;
+            output += `<img src='../../${obj.img}'/>`;
+            target.innerHTML = output;
+        }
+    };
+    xhr.open('GET', '../../jsexam/ajaxexam/content/w.json',true);
+    xhr.send();
+</script>
+
+</body>
+</html>
