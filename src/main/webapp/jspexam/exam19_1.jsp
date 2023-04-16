@@ -15,5 +15,6 @@ sessionScope 객체에서 추출 : ${ sessionScope.message }<br>
 applicationScope 객체에서 추출 : ${ applicationScope.message }<br>
 <hr>
 message 추출 : ${message}<br>
+<%--el은 표현언어라서 꺼내는것만 표현한다.--%>
 </body>
 </html>

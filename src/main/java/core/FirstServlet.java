@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/FirstServlet")
 public class FirstServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	public int i = 0;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("FirstServlet 실행.....");
 		response.setContentType("text/html; charset=utf-8");

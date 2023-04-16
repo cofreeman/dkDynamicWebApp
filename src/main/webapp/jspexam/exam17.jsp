@@ -12,6 +12,7 @@
 전달된 메시지의 존재 여부 : ${ !empty param.message }<hr>
 전달된 메시지의 내용은 ${param.message} 입니다.<br>
 전달된 메시지의 내용은 ${param["message"]} 입니다.<br>
+<%--el 태그는 값이 없다고 null 이 안 나온다.--%>
 <hr>
 전달된 메시지의 내용은 <%= request.getParameter("message") %> 입니다.<br>
 </body>
